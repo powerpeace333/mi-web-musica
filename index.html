@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POWERPEACE · Matías Taibo · Artista Oficial</title>
+    <meta name="description" content="PowerPeace (Matías Taibo) — Artista independiente. Escucha 'MIENTRAS YO GANO' en todas las plataformas.">
+    <meta property="og:title" content="POWERPEACE | Artista Oficial">
+    <meta property="og:image" content="https://i.ytimg.com/vi/VjdFM17OoGM/maxresdefault.jpg">
+    <meta property="og:type" content="website">
+    <!-- Security -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <style>
+        /* ── TOKENS ── */
+        :root{
+            --red:#E8002D; --purple:#7B1FA2; --cyan:#00E5FF;
+            --bg:#04040A; --bg2:#07070F; --sur:#0D0D1A; --sur2:#131324;
+            --brd:rgba(255,255,255,.06); --txt:#fff; --mut:#8888AA; --mut2:#4A4A66;
+            --g:linear-gradient(135deg,var(--red),var(--purple));
+            --gc:linear-gradient(135deg,var(--cyan),var(--purple));
+            --r:20px; --rl:28px;
+            --ease:cubic-bezier(.22,1,.36,1); --t:.5s var(--ease);
+        }
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth;scroll-padding-top:72px}
+        body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--txt);overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none;
+            -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+
+        /* ── NOISE TEXTURE ── */
+        body::before{content:'';position:fixed;inset:0;z-index:9990;pointer-events:none;opacity:.035;
+            background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            animation:grain 8s steps(10) infinite}
+        @keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-10%)}20%{transform:translate(-15%,5%)}30%{transform:translate(7%,-25%)}40%{transform:translate(-5%,25%)}50%{transform:translate(-15%,10%)}60%{transform:translate(15%,0)}70%{transform:translate(0,15%)}80%{transform:translate(3%,35%)}90%{transform:translate(-10%,10%)}}
+
+        /* ── PAGE FADE IN ── */
+        .page-content{animation:pageFadeIn 1s var(--ease) 1.4s both}
+        @keyframes pageFadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+        /* ── PRINT BLOCK ── */
+        @media print{
+            body{display:none!important}
+            html::after{content:'© POWERPEACE - Contenido protegido. No se permite la impresión.';display:block;padding:5rem;font-size:2rem;text-align:center;font-family:sans-serif}
+        }
+
+        /* ── IMAGES PROTECTION ── */
+        img{pointer-events:none}
+
+        /* ── STAGGERED PLATFORM ITEMS ── */
+        .pitem{transition:transform .5s var(--ease),opacity .5s var(--ease),border-color .3s,box-shadow .3s}
+        .pitem:nth-child(1){transition-delay:.05s}
+        .pitem:nth-child(2){transition-delay:.1s}
+        .pitem:nth-child(3){transition-delay:.15s}
+        .pitem:nth-child(4){transition-delay:.2s}
+        .pitem:nth-child(5){transition-delay:.25s}
+        .pitem:nth-child(6){transition-delay:.3s}
+        .pitem:hover{border-color:rgba(255,255,255,.12);transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+
+        /* ── STAT ITEM HOVER ── */
+        .sitem{transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+        .sitem:hover{transform:translateY(-5px);box-shadow:0 16px 32px rgba(0,0,0,.3)}
+
+        /* ── ABOUT TAG STAGGER ── */
+        .abtag:nth-child(1){animation:tagIn .5s var(--ease) .1s both}
+        .abtag:nth-child(2){animation:tagIn .5s var(--ease) .2s both}
+        .abtag:nth-child(3){animation:tagIn .5s var(--ease) .3s both}
+        .abtag:nth-child(4){animation:tagIn .5s var(--ease) .4s both}
+        .abtag:nth-child(5){animation:tagIn .5s var(--ease) .5s both}
+        .abtag:nth-child(6){animation:tagIn .5s var(--ease) .6s both}
+        @keyframes tagIn{from{opacity:0;transform:translateY(10px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+        /* ── TAB BLUR ── */
+        .page-blurred{filter:blur(15px) brightness(.5);transition:filter .4s var(--ease)}
+
+        /* ── MOUSE GLOW FOLLOWER ── */
+        #mglow{position:fixed;width:350px;height:350px;border-radius:50%;pointer-events:none;z-index:1;
+            background:radial-gradient(circle,rgba(232,0,45,.08) 0%,rgba(123,31,162,.04) 40%,transparent 70%);
+            transform:translate(-50%,-50%);transition:opacity .3s}
+
+        /* ── LOADER ENHANCED ── */
+        .ll{animation:lPulse 1.5s ease-in-out infinite alternate}
+        @keyframes lPulse{from{opacity:.6;transform:scale(.96)}to{opacity:1;transform:scale(1.02)}}
+
+        /* ── GRADIENT BORDER ANIMATION ── */
+        .relcard::before{content:'';position:absolute;inset:-1px;border-radius:inherit;padding:1px;z-index:-1;opacity:0;transition:opacity .5s var(--ease);
+            background:linear-gradient(135deg,var(--red),var(--purple),var(--cyan),var(--red));background-size:300% 300%;animation:borderShift 4s ease infinite}
+        .relcard:hover::before{opacity:1}
+        @keyframes borderShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+        .relcard{position:relative;overflow:hidden}
+
+        /* ── FOOTER WAVE ── */
+        .fwave{height:80px;width:100%;overflow:hidden;position:relative;margin-bottom:-1px}
+        .fwave svg{position:absolute;bottom:0;width:100%;height:100%}
+
+        /* ── SECTION GLOW ACCENTS ── */
+        .stsec,.plsec,.catsec{position:relative}
+        .stsec::before{content:'';position:absolute;top:0;left:50%;width:500px;height:500px;transform:translateX(-50%);background:radial-gradient(circle,rgba(232,0,45,.04) 0%,transparent 70%);pointer-events:none}
+
+        /* ── SMOOTH SECTION SEPARATORS ── */
+        section{position:relative}
+        section::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60%;max-width:600px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.04),transparent)}
+
+        /* ── CURSOR ── */
+        #cdot,#cring{position:fixed;pointer-events:none;z-index:99999;top:0;left:0;border-radius:50%;mix-blend-mode:difference}
+        #cdot{width:8px;height:8px;background:#fff;transform:translate(-50%,-50%)}
+        #cring{width:36px;height:36px;border:1.5px solid rgba(255,255,255,.5);transform:translate(-50%,-50%);transition:width .3s var(--ease),height .3s var(--ease)}
+
+        /* ── LOADER ── */
+        #ldr{position:fixed;inset:0;background:var(--bg);z-index:99998;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transition:opacity .9s var(--ease),visibility .9s}
+        #ldr.out{opacity:0;visibility:hidden}
+        .ll{font-family:'Bebas Neue',sans-serif;font-size:4rem;letter-spacing:8px;background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+        .lb{width:180px;height:2px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden}
+        .lf{height:100%;width:0;background:var(--g);animation:lf 1.3s var(--ease) forwards}
+        @keyframes lf{to{width:100%}}
+        .ltxt{font-size:.7rem;color:var(--mut2);letter-spacing:3px;font-family:'Syne',sans-serif;text-transform:uppercase;margin-top:.5rem}
+
+        /* ── TYPEWRITER ── */
+        .typewr{display:inline;border-right:2px solid var(--red);animation:blink-caret .8s step-end infinite}
+        @keyframes blink-caret{50%{border-color:transparent}}
+
+        /* ── ANIMATED GRADIENT HEADING ── */
+        .Ganim{background:linear-gradient(270deg,var(--red),var(--purple),var(--cyan),var(--red));background-size:600% 600%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradShift 8s ease infinite}
+        @keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+        /* ── AUDIO VISUALIZER ── */
+        .vizwrap{display:flex;align-items:flex-end;gap:2px;height:18px}
+        .vizbar{width:3px;background:var(--red);border-radius:1px;animation:vizPulse 1.2s ease-in-out infinite}
+        .vizbar:nth-child(1){height:8px;animation-delay:0s}
+        .vizbar:nth-child(2){height:14px;animation-delay:.15s}
+        .vizbar:nth-child(3){height:6px;animation-delay:.3s}
+        .vizbar:nth-child(4){height:12px;animation-delay:.45s}
+        .vizbar:nth-child(5){height:10px;animation-delay:.6s}
+        @keyframes vizPulse{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
+
+        /* ── PARALLAX ── */
+        .parallax-wrap{will-change:transform;transition:transform .1s linear}
+
+        /* ── ENHANCED SCROLL REVEAL ── */
+        .rv{opacity:0;transform:translateY(50px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+        .rv.on{opacity:1;transform:translateY(0)}
+        .rv.d1{transition-delay:.1s}
+        .rv.d2{transition-delay:.2s}
+        .rv.d3{transition-delay:.3s}
+        .rv.d4{transition-delay:.4s}
+        .rv.d5{transition-delay:.5s}
+
+        /* ── RELEASE CARD HOVER ── */
+        .relcard{transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s var(--ease)}
+        .relcard:hover{transform:translateY(-6px);box-shadow:0 30px 60px rgba(0,0,0,.5);border-color:rgba(255,255,255,.1)}
+
+        /* ── CTA GLOW PULSE ── */
+        .bp{position:relative;overflow:hidden}
+        .bp::after{content:'';position:absolute;inset:-2px;background:var(--g);border-radius:inherit;z-index:-1;filter:blur(14px);opacity:0;transition:opacity .5s var(--ease)}
+        .bp:hover::after{opacity:.45}
+
+        /* ── SECTION DIVIDER ── */
+        .sdiv{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--brd),rgba(232,0,45,.15),var(--brd),transparent);margin:0 auto}
+
+        /* ── PROGRESS ── */
+        #prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--g);z-index:9999;transition:width .1s linear;pointer-events:none}
+
+        /* ── NAV ── */
+        nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:72px;background:rgba(4,4,10,.8);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border-bottom:1px solid var(--brd);transition:var(--t)}
+        nav.sc{background:rgba(4,4,10,.97)}
+        .nlogo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:4px;text-decoration:none;color:var(--txt);display:flex;align-items:center;gap:.75rem}
+        .ndot{width:8px;height:8px;background:var(--red);border-radius:50%;animation:blk 2s infinite}
+        @keyframes blk{0%,100%{opacity:1}50%{opacity:.15}}
+        .nlinks{display:flex;gap:2.5rem}
+        .nlinks a{font-family:'Syne',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:var(--mut);transition:color .3s}
+        .nlinks a:hover{color:#fff}
+        .nright{display:flex;align-items:center;gap:1rem}
+        .bnav{font-family:'Syne',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:.65rem 1.5rem;border-radius:99px;background:var(--g);color:#fff;text-decoration:none;transition:var(--t);border:none;cursor:none}
+        .bnav:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(232,0,45,.35)}
+        .ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:none;padding:6px}
+        .ham span{display:block;width:24px;height:1.5px;background:#fff;border-radius:2px;transition:var(--t)}
+
+        /* ── MOBILE MENU ── */
+        .mob{position:fixed;inset:0;background:rgba(4,4,10,.98);-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);z-index:9997;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;opacity:0;visibility:hidden;transition:var(--t)}
+        .mob.open{opacity:1;visibility:visible}
+        .mob a{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:5px;text-decoration:none;color:var(--mut);transition:color .3s}
+        .mob a:hover{color:#fff}
+        .mobx{position:absolute;top:1.5rem;right:5%;background:none;border:none;color:#fff;font-size:1.8rem;cursor:none}
+
+        /* ── HELPERS ── */
+        .wrap{max-width:1280px;margin:0 auto;padding:0 5%}
+        .tag{display:inline-flex;align-items:center;gap:.6rem;font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);padding:.45rem 1.1rem;border:1px solid rgba(232,0,45,.22);border-radius:99px;background:rgba(232,0,45,.05);margin-bottom:1.8rem}
+        .tagdot{width:6px;height:6px;background:var(--red);border-radius:50%}
+        h2.D{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6vw,5.5rem);letter-spacing:3px;line-height:1;margin-bottom:1.5rem}
+        .G{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+        .rv{opacity:0;transform:translateY(36px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+        .rv.on{opacity:1;transform:translateY(0)}
+        .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+        /* ── BUTTONS ── */
+        .bp,.bo{display:inline-flex;align-items:center;gap:.6rem;font-family:'Syne',sans-serif;font-size:.76rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:1rem 2rem;border-radius:99px;transition:var(--t);cursor:none;border:none}
+        .bp{background:var(--g);color:#fff}
+        .bp:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(232,0,45,.35)}
+        .bo{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.15)}
+        .bo:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.04);transform:translateY(-4px)}
+        .bs,.bsg,.bso{display:inline-flex;align-items:center;gap:.5rem;font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:.65rem 1.3rem;border-radius:99px;transition:var(--t);cursor:none;border:none}
+        .bsg{background:var(--g);color:#fff}
+        .bsg:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(232,0,45,.3)}
+        .bso{background:transparent;color:var(--mut);border:1px solid var(--brd)}
+        .bso:hover{border-color:rgba(255,255,255,.22);color:#fff;transform:translateY(-2px)}
+
+        /* ── HERO ── */
+        .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:10rem 0 7rem}
+        .hbg{position:absolute;inset:0;z-index:0;
+            background:radial-gradient(ellipse 80% 55% at 70% -5%,rgba(123,31,162,.22) 0%,transparent 60%),
+                        radial-gradient(ellipse 55% 40% at 0% 90%,rgba(232,0,45,.17) 0%,transparent 60%),
+                        radial-gradient(ellipse 40% 40% at 95% 55%,rgba(0,229,255,.07) 0%,transparent 60%)}
+        .hgrid{position:absolute;inset:0;z-index:0;
+            background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+            background-size:80px 80px;
+            -webkit-mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.5) 20%,rgba(0,0,0,.5) 80%,transparent 100%);
+            mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.5) 20%,rgba(0,0,0,.5) 80%,transparent 100%)}
+        .hi{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:0 5%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+        .hlbl{font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem}
+        .hlbl::before{content:'';display:block;width:32px;height:1.5px;background:var(--red)}
+        .hname{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,12vw,11rem);letter-spacing:4px;line-height:.87;margin-bottom:1.5rem}
+        .hname .l2{display:block;background:linear-gradient(270deg,var(--red),var(--purple),var(--cyan),var(--red));background-size:600% 600%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradShift 8s ease infinite}
+        .hbio{font-size:.97rem;color:var(--mut);line-height:1.9;max-width:400px;margin-bottom:2.5rem}
+        .hsoc{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.5rem}
+        .spill{display:flex;align-items:center;gap:.55rem;padding:.55rem 1.1rem;border-radius:99px;border:1px solid var(--brd);background:rgba(255,255,255,.025);color:var(--mut);text-decoration:none;font-size:.8rem;font-weight:600;transition:var(--t)}
+        .spill:hover{border-color:rgba(255,255,255,.15);color:#fff;background:rgba(255,255,255,.06);transform:translateY(-3px)}
+        .hctas{display:flex;gap:1rem;flex-wrap:wrap}
+
+        /* ── VIDEO THUMBNAIL ── */
+        .vwrap{position:relative;animation:vu 1.1s var(--ease) .5s both}
+        @keyframes vu{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+        .vglow{position:absolute;inset:-20px;border-radius:32px;background:var(--g);filter:blur(56px);opacity:.15;z-index:0;pointer-events:none}
+        .vcard{position:relative;z-index:1;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.09);box-shadow:0 36px 72px rgba(0,0,0,.6);cursor:none}
+        .vthumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .6s var(--ease)}
+        .vcard:hover .vthumb{transform:scale(1.04)}
+        .voverlay{position:absolute;inset:0;background:rgba(0,0,0,.35);transition:background .4s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+        .vcard:hover .voverlay{background:rgba(0,0,0,.2)}
+        .vplay{width:72px;height:72px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:#fff;box-shadow:0 12px 36px rgba(232,0,45,.5);transition:var(--t);flex-shrink:0}
+        .vcard:hover .vplay{transform:scale(1.1);box-shadow:0 16px 48px rgba(232,0,45,.6)}
+        .vtitle{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:3px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+        .vtag{position:absolute;top:1rem;left:1rem;z-index:2;background:var(--g);color:#fff;font-family:'Syne',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:.4rem .9rem;border-radius:99px;display:flex;align-items:center;gap:.5rem}
+        .vtdot{width:6px;height:6px;background:#fff;border-radius:50%;animation:blk 1.5s infinite}
+        .vdur{position:absolute;bottom:.75rem;right:.75rem;background:rgba(0,0,0,.75);color:#fff;font-family:'Syne',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:1px;padding:.3rem .7rem;border-radius:6px}
+
+        /* ── SCROLL HINT ── */
+        .scrl{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:.5rem}
+        .slbl{font-family:'Syne',sans-serif;font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--mut2)}
+        .sln{width:1px;height:48px;background:linear-gradient(to bottom,rgba(255,255,255,.15),transparent);animation:sc 2s infinite}
+        @keyframes sc{0%{opacity:0;transform:scaleY(0);transform-origin:top}50%{opacity:1}100%{opacity:0;transform:scaleY(1);transform-origin:top}}
+
+        /* ── MARQUEE ── */
+        .mstrip{border-top:1px solid var(--brd);border-bottom:1px solid var(--brd);background:var(--bg2);padding:.85rem 0;overflow:hidden}
+        .mtrack{display:flex;white-space:nowrap;animation:mq 24s linear infinite}
+        .mtrack:hover{animation-play-state:paused}
+        @keyframes mq{to{transform:translateX(-50%)}}
+        .mi{display:inline-flex;align-items:center;gap:1.5rem;font-family:'Bebas Neue',sans-serif;font-size:.9rem;letter-spacing:3px;color:var(--mut2);padding:0 2.5rem}
+        .mi .sep{color:var(--red);font-size:.6rem}
+
+        /* ── STATS ── */
+        .stsec{padding:7rem 0}
+        .sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5px;background:var(--brd);border:1px solid var(--brd);border-radius:var(--rl);overflow:hidden;margin-top:3rem}
+        .sitem{background:var(--bg);padding:3.5rem 2rem;text-align:center;transition:background .4s}
+        .sitem:hover{background:var(--sur)}
+        .sval{font-family:'Bebas Neue',sans-serif;font-size:4.5rem;letter-spacing:2px;background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;margin-bottom:.8rem}
+        .slbl2{font-family:'Syne',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--mut)}
+
+        /* ── PLATFORMS ── */
+        .plsec{padding:7rem 0}
+        .plgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--brd);border:1px solid var(--brd);border-radius:var(--rl);overflow:hidden;margin-top:3rem}
+        .pitem{background:var(--bg);padding:2.8rem 2.5rem;display:flex;flex-direction:column;gap:1.4rem;transition:background .4s;position:relative;overflow:hidden}
+        .pitem::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--g);transform:scaleX(0);transition:transform .45s var(--ease);transform-origin:left}
+        .pitem:hover{background:var(--sur)}
+        .pitem:hover::before{transform:scaleX(1)}
+        .ptop{display:flex;align-items:center;gap:1.1rem}
+        .pico{font-size:1.75rem;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:13px;background:var(--sur2);flex-shrink:0}
+        .pname{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700}
+        .pdesc{font-size:.86rem;color:var(--mut);line-height:1.72;flex:1}
+        .plink{display:inline-flex;align-items:center;gap:.55rem;font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mut);text-decoration:none;transition:color .3s}
+        .plink:hover{color:#fff}
+        .plink i{font-size:.62rem;transition:transform .3s var(--ease)}
+        .plink:hover i{transform:translateX(4px)}
+        .c-spotify{color:#1DB954}.c-apple{color:#FA243C}.c-youtube{color:#FF0000}
+        .c-deezer{color:#00C7F2}.c-amazon{color:#00A8E1}.c-soundcloud{color:#FF3300}
+        .c-heart{color:var(--red)}
+
+        /* ── RELEASE ── */
+        .relsec{padding:7rem 0}
+        .reltag{display:inline-flex;margin-bottom:1.5rem}
+        .relcard{background:var(--sur);border:1px solid var(--brd);border-radius:var(--rl);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;margin-top:3rem}
+        .relcard+.relcard{margin-top:1.5rem}
+        .relleft{padding:4.5rem;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+        .relleft::before{content:'';position:absolute;top:-80px;left:-80px;width:260px;height:260px;background:radial-gradient(circle,rgba(232,0,45,.18) 0%,transparent 70%);pointer-events:none}
+        .reltitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,4vw,3.6rem);letter-spacing:3px;line-height:1;margin-bottom:1.5rem}
+        .reldesc{font-size:.9rem;color:var(--mut);line-height:1.85;margin-bottom:2.5rem;max-width:340px}
+        .relbtns{display:flex;gap:.8rem;flex-wrap:wrap}
+        /* Release right - video thumbnail */
+        .relright{position:relative;overflow:hidden;cursor:none;display:block;min-height:380px}
+        .relthumb{width:100%;height:100%;object-fit:cover;object-position:center;display:block;position:absolute;top:0;left:0;right:0;bottom:0;transform:scale(1.15);transition:transform .6s var(--ease)}
+        .relright:hover .relthumb{transform:scale(1.25)}
+        .relzoom{transform:scale(1.6)}
+        .relright:hover .relzoom{transform:scale(1.7)}
+        .reloverlay{position:absolute;inset:0;background:linear-gradient(90deg,var(--sur) 0%,rgba(13,13,26,.3) 40%,rgba(0,0,0,.2) 100%);display:flex;align-items:center;justify-content:center;transition:var(--t)}
+        .relright:hover .reloverlay{background:linear-gradient(90deg,var(--sur) 0%,rgba(13,13,26,.1) 35%,rgba(0,0,0,.15) 100%)}
+        .relplay{width:60px;height:60px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;box-shadow:0 10px 30px rgba(232,0,45,.45);transition:var(--t);margin-left:4rem}
+        .relright:hover .relplay{transform:scale(1.12)}
+
+        /* ── CATALOG ── */
+        .catsec{padding:7rem 0}
+        .catgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3.5rem}
+        .catcard{background:var(--sur);border:1px solid var(--brd);border-radius:var(--r);padding:2.5rem;display:flex;flex-direction:column;gap:1.4rem;transition:var(--t)}
+        .catcard:hover{border-color:rgba(255,255,255,.11);transform:translateY(-6px);box-shadow:0 28px 55px rgba(0,0,0,.4)}
+        .catico{width:54px;height:54px;border-radius:15px;background:var(--g);display:flex;align-items:center;justify-content:center;font-size:1.35rem}
+        .cattitle{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700}
+        .catsub{font-size:.7rem;color:var(--red);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-top:.2rem}
+        .catdesc{font-size:.87rem;color:var(--mut);line-height:1.75;flex:1}
+        .catbtns{display:flex;gap:.75rem;flex-wrap:wrap}
+
+        /* ── NEWSLETTER ── */
+        .nlsec{padding:7rem 0}
+        .nlcard{background:var(--sur);border:1px solid var(--brd);border-radius:var(--rl);padding:5rem;text-align:center;position:relative;overflow:hidden}
+        .nlcard::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:380px;height:380px;background:radial-gradient(circle,rgba(0,229,255,.09) 0%,rgba(123,31,162,.07) 50%,transparent 70%);pointer-events:none}
+        .nlcard h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,5vw,3.8rem);letter-spacing:3px;margin-bottom:1rem}
+        .nlcard>p{font-size:.93rem;color:var(--mut);max-width:480px;margin:0 auto 2.5rem;line-height:1.85}
+        .nlform{display:flex;gap:1rem;max-width:480px;margin:0 auto}
+        .nlinput{flex:1;padding:1rem 1.5rem;border-radius:99px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);color:#fff;font-family:'Manrope',sans-serif;font-size:.9rem;outline:none;transition:border .3s}
+        .nlinput:focus{border-color:rgba(255,255,255,.28)}
+        .nlinput::placeholder{color:var(--mut2)}
+        .nlnote{margin-top:1.2rem;font-size:.73rem;color:var(--mut2);display:flex;align-items:center;justify-content:center;gap:.5rem}
+        .nlbtn{cursor:none;white-space:nowrap}
+
+        /* ── NEWSLETTER INPUT ── */
+        .nlinput:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 20px rgba(0,229,255,.2)}
+
+        /* ── BRAND COLORS HOVER ── */
+        .socbtn:hover .fa-instagram{color:#E1306C;text-shadow:0 0 15px rgba(225,48,108,.6)}
+        .socbtn:hover .fa-tiktok{color:#00F2EA;text-shadow:2px 2px 0 #FF0050}
+        .socbtn:hover .fa-youtube{color:#FF0000;text-shadow:0 0 15px rgba(255,0,0,.6)}
+        .socbtn:hover .fa-spotify{color:#1DB954;text-shadow:0 0 15px rgba(29,185,84,.6)}
+        .socbtn i{transition:color .3s,text-shadow .3s}
+        footer{border-top:1px solid var(--brd);padding:5rem 0 3rem;background:var(--bg2)}
+        .fgrid{display:grid;grid-template-columns:2fr 1fr;gap:5rem;margin-bottom:4rem}
+        .flogo{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:4px;background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:1.2rem;display:block}
+        .fbrand p{font-size:.86rem;color:var(--mut);line-height:1.85;max-width:270px;margin-bottom:2rem}
+        .fsoc{display:flex;gap:.7rem}
+        .socbtn{width:40px;height:40px;border-radius:50%;border:1px solid var(--brd);background:transparent;display:flex;align-items:center;justify-content:center;color:var(--mut);text-decoration:none;font-size:.86rem;transition:var(--t)}
+        .socbtn:hover{background:var(--g);border-color:transparent;color:#fff;transform:translateY(-3px)}
+        .fcol h4{font-family:'Syne',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--mut2);margin-bottom:1.5rem}
+        .fcol ul{list-style:none;display:flex;flex-direction:column;gap:.85rem}
+        .fcol ul a{font-size:.86rem;color:var(--mut);text-decoration:none;transition:color .3s}
+        .fcol ul a:hover{color:#fff}
+        .fbot{border-top:1px solid var(--brd);padding-top:2.5rem;display:flex;align-items:center;justify-content:space-between}
+        .fbot p{font-size:.78rem;color:var(--mut2)}
+
+        /* ── FLOATING PLAYER ── */
+        .fplay{position:fixed;bottom:2rem;right:2rem;z-index:900;display:flex;align-items:center;gap:.75rem;background:var(--bg);border:1px solid var(--brd);border-radius:99px;padding:.85rem 1.6rem;color:#fff;font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:none;transition:var(--t);box-shadow:0 20px 40px rgba(0,0,0,.45)}
+        .fplay:hover{background:var(--sur);border-color:rgba(255,255,255,.15);transform:translateY(-4px)}
+        .fpdot{width:8px;height:8px;background:var(--red);border-radius:50%;animation:blk 1.5s infinite}
+
+        /* ── NOTIF ── */
+        .notif{position:fixed;top:5rem;right:2rem;z-index:9998;background:var(--sur);border:1px solid var(--brd);border-radius:15px;padding:1.1rem 1.4rem;display:flex;align-items:center;gap:.9rem;max-width:300px;box-shadow:0 20px 40px rgba(0,0,0,.4);transform:translateX(120%);transition:transform .6s var(--ease)}
+        .notif.show{transform:translateX(0)}
+        .nico{width:38px;height:38px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+        .ntxt p:first-child{font-family:'Syne',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--red);margin-bottom:.2rem}
+        .ntxt p:last-child{font-size:.78rem;color:var(--mut)}
+
+        /* ── PARTICLES ── */
+        #particles{position:absolute;inset:0;z-index:0;pointer-events:none}
+
+        /* ── ACTIVE NAV ── */
+        .nlinks a.active{color:var(--red)}
+
+        /* ── ABOUT ── */
+        .absec{padding:7rem 0}
+        .abgrid{display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;align-items:center;margin-top:3rem}
+        .abimg{position:relative;border-radius:var(--rl);overflow:hidden;border:1px solid var(--brd);aspect-ratio:3/4;max-height:520px}
+        .abimg img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+        .abimg:hover img{transform:scale(1.04)}
+        .abglow{position:absolute;inset:-30px;background:var(--gc);filter:blur(70px);opacity:.1;z-index:-1;pointer-events:none}
+        .abtxt h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:3px;margin-bottom:1.5rem}
+        .abtxt p{font-size:.92rem;color:var(--mut);line-height:1.95;margin-bottom:1.5rem}
+        .abtags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
+        .abtag{font-family:'Syne',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:.5rem 1rem;border-radius:99px;border:1px solid var(--brd);color:var(--mut);background:rgba(255,255,255,.02);transition:var(--t)}
+        .abtag:hover{border-color:rgba(255,255,255,.2);color:#fff;background:rgba(255,255,255,.05)}
+
+        /* ── BACK TO TOP ── */
+        #btt{position:fixed;bottom:2rem;left:2rem;z-index:900;width:46px;height:46px;border-radius:50%;background:var(--sur);border:1px solid var(--brd);color:var(--mut);font-size:.9rem;display:flex;align-items:center;justify-content:center;cursor:none;opacity:0;visibility:hidden;transform:translateY(16px);transition:var(--t)}
+        #btt.show{opacity:1;visibility:visible;transform:translateY(0)}
+        #btt:hover{background:var(--g);border-color:transparent;color:#fff;transform:translateY(-3px)}
+
+        /* ── GLASS CARDS ── */
+        .catcard{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);background:rgba(13,13,26,.6)}
+        .pitem{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+
+        /* ── TILT GLOW ── */
+        .catcard::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(232,0,45,.4),transparent);opacity:0;transition:opacity .4s}
+        .catcard:hover::before{opacity:1}
+        .catcard{position:relative;overflow:hidden}
+
+        /* ── FOCUS STATES ── */
+        a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+
+        /* ── REDUCED MOTION ── */
+        @media(prefers-reduced-motion:reduce){
+            *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
+        }
+
+        /* ── RESPONSIVE ── */
+        @media(max-width:1024px){
+            .hi{grid-template-columns:1fr;gap:4rem;padding-top:9rem}
+            .vwrap{order:-1}
+            .sgrid{grid-template-columns:repeat(2,1fr)}
+            .plgrid{grid-template-columns:repeat(2,1fr)}
+            .relcard{grid-template-columns:1fr}
+            .relright{min-height:280px}
+            .fgrid{grid-template-columns:1fr 1fr;gap:3rem}
+            .fbrand{grid-column:1/-1}
+            .abgrid{grid-template-columns:1fr;gap:2.5rem}
+            .abimg{max-height:400px}
+        }
+        @media(max-width:768px){
+            .nlinks,.bnav{display:none}
+            .ham{display:flex}
+            .plgrid{grid-template-columns:1fr}
+            .catgrid{grid-template-columns:1fr}
+            .relleft{padding:3rem 1.5rem}
+            .nlcard{padding:3rem 1.5rem}
+            .nlform{flex-direction:column}
+            .fgrid{grid-template-columns:1fr;gap:2.5rem}
+            .fbot{flex-direction:column;gap:1rem;text-align:center}
+            .fplay{bottom:1rem;right:1rem}
+            #btt{left:1rem;bottom:5rem}
+        }
+        @media(max-width:480px){
+            .sgrid{grid-template-columns:1fr}
+            .hctas{flex-direction:column}
+            .bp,.bo{width:100%;justify-content:center}
+        }
+    </style>
+    <!-- Schema.org for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicArtist",
+      "name": "POWERPEACE",
+      "alternateName": "Matías Taibo",
+      "url": "https://powerpeace.com",
+      "image": "https://i.ytimg.com/vi/VjdFM17OoGM/maxresdefault.jpg",
+      "sameAs": [
+        "https://www.instagram.com/powerpeacee/",
+        "https://www.tiktok.com/@matias.taiboo",
+        "https://youtube.com/channel/UCj2EzCODcnx5hqrqNVH6tAg",
+        "https://open.spotify.com/intl-es/artist/6zmtB63cGtZggwz6l878BL"
+      ],
+      "description": "Artista independiente, Productor musical y Compositor de Argentina.",
+      "genre": ["Urban", "Electronic", "Experimental"]
+    }
+    </script>
+</head>
+<body>
+<noscript><div style="position:fixed;inset:0;background:#04040A;color:#E8002D;z-index:999999;display:flex;align-items:center;justify-content:center;text-align:center;font-family:sans-serif;font-size:1.5rem;padding:2rem">⚠️ JavaScript es necesario para visualizar este sitio correctamente.<br>Por favor actívalo para continuar.</div></noscript>
+
+<!-- Custom Cursor -->
+<div id="cdot"></div>
+<div id="cring"></div>
+<div id="mglow"></div>
+
+<!-- Loader -->
+<div id="ldr">
+    <div class="ll">POWERPEACE</div>
+    <div class="lb"><div class="lf"></div></div>
+    <div class="ltxt">CARGANDO EXPERIENCIA...</div>
+</div>
+
+<!-- Progress -->
+<div id="prog"></div>
+
+<!-- Notification -->
+<div class="notif" id="notif">
+    <div class="nico"><i class="fas fa-music"></i></div>
+    <div class="ntxt">
+        <p>Nuevo lanzamiento</p>
+        <p>"MIENTRAS YO GANO" — disponible ahora</p>
+    </div>
+</div>
+
+<div class="page-content" id="pgc">
+<!-- Navbar -->
+<nav id="nav">
+    <a href="#home" class="nlogo"><div class="ndot"></div>POWERPEACE</a>
+    <div class="nlinks">
+        <a href="#home">Inicio</a>
+        <a href="#about">Sobre Mí</a>
+        <a href="#stats">Stats</a>
+        <a href="#music">Escuchar</a>
+        <a href="#release">Lanzamiento</a>
+        <a href="#newsletter">Comunidad</a>
+    </div>
+    <div class="nright">
+        <a href="https://open.spotify.com/intl-es/artist/6zmtB63cGtZggwz6l878BL" target="_blank" rel="noopener" class="bnav">
+            <i class="fab fa-spotify"></i> Escuchar
+        </a>
+        <button class="ham" id="ham"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mob" id="mob">
+    <button class="mobx" id="mobx"><i class="fas fa-times"></i></button>
+    <a href="#home">Inicio</a>
+    <a href="#about">Sobre Mí</a>
+    <a href="#stats">Estadísticas</a>
+    <a href="#music">Escuchar</a>
+    <a href="#release">Lanzamiento</a>
+    <a href="#newsletter">Comunidad</a>
+</div>
+
+<!-- ════════════════════════════════ HERO -->
+<section class="hero" id="home">
+    <div class="hbg"></div>
+    <div class="hgrid"></div>
+    <canvas id="particles"></canvas>
+    <div class="hi">
+        <!-- Left text -->
+        <div>
+            <div class="hlbl">Artista independiente · Matías Taibo</div>
+            <h1 class="hname">POWER<span class="l2">PEACE</span></h1>
+            <p class="hbio">Sonido auténtico que cruza géneros. Cada producción es una declaración de evolución artística construida desde cero para conectar con quienes lo sienten de verdad.<span class="typewr" id="tw"></span></p>
+            <div class="hsoc">
+                <a href="https://www.instagram.com/powerpeacee/" target="_blank" rel="noopener" class="spill"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.tiktok.com/@matias.taiboo" target="_blank" rel="noopener" class="spill"><i class="fab fa-tiktok"></i> TikTok</a>
+                <a href="https://youtube.com/channel/UCj2EzCODcnx5hqrqNVH6tAg" target="_blank" rel="noopener" class="spill"><i class="fab fa-youtube"></i> YouTube</a>
+                <a href="https://open.spotify.com/intl-es/artist/6zmtB63cGtZggwz6l878BL" target="_blank" rel="noopener" class="spill"><i class="fab fa-spotify"></i> Spotify</a>
+            </div>
+            <div class="hctas">
+                <a href="#release" class="bp"><i class="fas fa-play"></i> Nuevo Lanzamiento</a>
+                <a href="#music" class="bo"><i class="fas fa-headphones"></i> Ver Catálogo</a>
+            </div>
+        </div>
+        <!-- Right video thumbnail -->
+        <div class="vwrap">
+            <div class="vglow"></div>
+            <a href="https://youtu.be/VjdFM17OoGM" target="_blank" rel="noopener" class="vcard">
+                <div class="vtag"><div class="vtdot"></div> Nuevo Video</div>
+                <img class="vthumb"
+                     src="https://i.ytimg.com/vi/VjdFM17OoGM/maxresdefault.jpg"
+                     alt="POWERPEACE – MIENTRAS YO GANO"
+                     onerror="this.src='https://i.ytimg.com/vi/VjdFM17OoGM/hqdefault.jpg'">
+                <div class="voverlay">
+                    <div class="vplay"><i class="fas fa-play"></i></div>
+                    <div class="vtitle">MIENTRAS YO GANO</div>
+                </div>
+                <div class="vdur">YouTube</div>
+            </a>
+        </div>
+    </div>
+    <div class="scrl">
+        <span class="slbl">Scroll</span>
+        <div class="sln"></div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════ MARQUEE -->
+<div class="mstrip">
+    <div class="mtrack">
+        <span class="mi">A MIS 23 <span class="sep">✦</span></span>
+        <span class="mi">NOVA <span class="sep">✦</span></span>
+        <span class="mi">ECLIPSE PRISM <span class="sep">✦</span></span>
+        <span class="mi">NOETIC <span class="sep">✦</span></span>
+        <span class="mi">MIENTRAS YO GANO <span class="sep">✦</span></span>
+        <span class="mi">SPOTIFY <span class="sep">✦</span></span>
+        <span class="mi">APPLE MUSIC <span class="sep">✦</span></span>
+        <span class="mi">AMAZON MUSIC <span class="sep">✦</span></span>
+        <span class="mi">YOUTUBE MUSIC <span class="sep">✦</span></span>
+        <span class="mi">DEEZER <span class="sep">✦</span></span>
+        <span class="mi">SOUNDCLOUD <span class="sep">✦</span></span>
+        <span class="mi">POWERPEACE · MATÍAS TAIBO <span class="sep">✦</span></span>
+        <span class="mi">MIENTRAS YO GANO <span class="sep">✦</span></span>
+        <span class="mi">SPOTIFY <span class="sep">✦</span></span>
+        <span class="mi">APPLE MUSIC <span class="sep">✦</span></span>
+        <span class="mi">AMAZON MUSIC <span class="sep">✦</span></span>
+        <span class="mi">YOUTUBE MUSIC <span class="sep">✦</span></span>
+        <span class="mi">DEEZER <span class="sep">✦</span></span>
+        <span class="mi">SOUNDCLOUD <span class="sep">✦</span></span>
+        <span class="mi">POWERPEACE · MATÍAS TAIBO <span class="sep">✦</span></span>
+    </div>
+</div>
+
+<!-- ════════════════════════════════ ABOUT -->
+<section class="absec" id="about">
+    <div class="wrap">
+        <div class="tag rv"><div class="tagdot"></div> Sobre mí</div>
+        <h2 class="D rv d1">CONOCÉ AL <span class="G">ARTISTA</span></h2>
+        <div class="abgrid rv d2">
+            <div class="abimg">
+                <div class="abglow"></div>
+                <img src="https://i.ytimg.com/vi/VjdFM17OoGM/maxresdefault.jpg" alt="PowerPeace - Matías Taibo">
+            </div>
+            <div class="abtxt">
+                <h3>MATÍAS TAIBO <span class="G">POWERPEACE</span></h3>
+                <p>Artista independiente con una visión clara: crear música que conecte, que rompa barreras y que inspire a quienes la escuchan. Cada producción es un paso más en un camino construido desde cero.</p>
+                <p>Con más de 23 canciones publicadas en todas las plataformas digitales, mi música cruza géneros y fronteras. Del urbano al electrónico, del trap al pop experimental — todo con una identidad única.</p>
+                <p>Creo música de alta frecuencia, libre de programaciones ilícitas y contenido nocivo para la mente. Cada beat, cada letra y cada producción está pensada para elevar, no para dañar. Cuido a mis oyentes sin afectar su esencia espiritual — porque la música tiene poder, y elijo usarlo para construir.</p>
+                <div class="abtags">
+                    <span class="abtag">Productor</span>
+                    <span class="abtag">Compositor</span>
+                    <span class="abtag">Artista</span>
+                    <span class="abtag">Urbano</span>
+                    <span class="abtag">Electrónico</span>
+                    <span class="abtag">Independiente</span>
+                    <span class="abtag">Frecuencias Conscientes</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════ STATS -->
+<section class="stsec" id="stats">
+    <div class="wrap">
+        <div class="tag rv"><div class="tagdot"></div> Impacto global</div>
+        <h2 class="D rv d1">IMPACTO <span class="G">MUSICAL</span></h2>
+        <div class="sgrid rv d2">
+            <div class="sitem"><div class="sval" data-t="600">0</div><div class="slbl2">Oyentes Totales</div></div>
+            <div class="sitem"><div class="sval" data-t="10000">0</div><div class="slbl2">Reproducciones</div></div>
+            <div class="sitem"><div class="sval" data-t="23">0</div><div class="slbl2">Canciones</div></div>
+            <div class="sitem"><div class="sval" data-t="15">0</div><div class="slbl2">Países</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════ PLATFORMS -->
+<section class="plsec" id="music">
+    <div class="wrap">
+        <div class="tag rv"><div class="tagdot"></div> Streaming global</div>
+        <h2 class="D rv d1">ESCUCHA EN <span class="G">TODAS PARTES</span></h2>
+        <div class="plgrid rv d2">
+            <div class="pitem">
+                <div class="ptop"><div class="pico"><i class="fab fa-spotify c-spotify"></i></div><div class="pname">Spotify</div></div>
+                <p class="pdesc">Playlists oficiales, álbumes y singles con la mejor calidad. Sígueme para no perderte ningún lanzamiento.</p>
+                <a href="https://open.spotify.com/intl-es/artist/6zmtB63cGtZggwz6l878BL" target="_blank" rel="noopener" class="plink">Abrir en Spotify <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="pitem">
+                <div class="ptop"><div class="pico"><i class="fab fa-apple c-apple"></i></div><div class="pname">Apple Music</div></div>
+                <p class="pdesc">Experiencia premium con sonido espacial y todo el catálogo en alta definición.</p>
+                <a href="https://music.apple.com/ar/artist/powerpeace/1641021393" target="_blank" rel="noopener" class="plink">Abrir en Apple Music <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="pitem">
+                <div class="ptop"><div class="pico"><i class="fab fa-youtube c-youtube"></i></div><div class="pname">YouTube</div></div>
+                <p class="pdesc">Videos oficiales, contenido exclusivo y catálogo completo en video y audio.</p>
+                <a href="https://youtube.com/channel/UCj2EzCODcnx5hqrqNVH6tAg" target="_blank" rel="noopener" class="plink">Abrir en YouTube <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="pitem">
+                <div class="ptop"><div class="pico"><i class="fab fa-deezer c-deezer"></i></div><div class="pname">Deezer</div></div>
+                <p class="pdesc">Calidad Hi-Fi superior con playlists personalizadas. Escucha como nunca antes.</p>
+                <a href="https://link.deezer.com/s/31Plv6FXvdjRBSCPOJGKA" target="_blank" rel="noopener" class="plink">Abrir en Deezer <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="pitem">
+                <div class="ptop"><div class="pico"><i class="fab fa-amazon c-amazon"></i></div><div class="pname">Amazon Music</div></div>
+                <p class="pdesc">Disponible para Prime y Amazon Music Unlimited en todo el mundo.</p>
+                <a href="https://music.amazon.com/artists/B0BBP4DM1V/powerpeace" target="_blank" rel="noopener" class="plink">Abrir en Amazon Music <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="pitem">
+                <div class="ptop"><div class="pico"><i class="fab fa-soundcloud c-soundcloud"></i></div><div class="pname">SoundCloud</div></div>
+                <p class="pdesc">Lanzamientos exclusivos, demos y versiones alternativas solo disponibles aquí.</p>
+                <a href="https://soundcloud.com/powerpeace-music" target="_blank" rel="noopener" class="plink">Abrir en SoundCloud <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="sdiv"></div>
+
+<!-- ════════════════════════════════ RELEASE -->
+<section class="relsec" id="release">
+    <div class="wrap">
+        <div class="tag rv"><div class="tagdot"></div> Lanzamientos recientes</div>
+        <h2 class="D rv d1">ÚLTIMOS <span class="Ganim">LANZAMIENTOS</span></h2>
+
+        <!-- Release 1: A Mis 23 -->
+        <div class="relcard rv d2">
+            <div class="relleft">
+                <div class="tag reltag"><div class="tagdot"></div> Nuevo</div>
+                <h3 class="reltitle">"A MIS<br>23"</h3>
+                <p class="reldesc">Colaboración con JESLABTV que marca un punto de inflexión. Una reflexión personal sobre el camino recorrido a los 23 años, con un sonido fresco y auténtico.</p>
+                <div class="relbtns">
+                    <a href="https://youtu.be/ycOw7CFICMQ" target="_blank" rel="noopener" class="bsg"><i class="fab fa-youtube"></i> Ver Video</a>
+                    <a href="https://open.spotify.com/intl-es/artist/6zmtB63cGtZggwz6l878BL" target="_blank" rel="noopener" class="bso"><i class="fab fa-spotify"></i> Escuchar</a>
+                </div>
+            </div>
+            <a href="https://youtu.be/ycOw7CFICMQ" target="_blank" rel="noopener" class="relright">
+                <img class="relthumb"
+                     src="https://i.ytimg.com/vi/ycOw7CFICMQ/maxresdefault.jpg"
+                     alt="A Mis 23 – JESLABTV x PowerPeace"
+                     onerror="this.src='https://i.ytimg.com/vi/ycOw7CFICMQ/hqdefault.jpg'">
+                <div class="reloverlay">
+                    <div class="relplay"><i class="fas fa-play"></i></div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Release 2: Nova -->
+        <div class="relcard rv d3">
+            <div class="relleft">
+                <div class="tag reltag"><div class="tagdot"></div> Single</div>
+                <h3 class="reltitle">"NOVA"</h3>
+                <p class="reldesc">Una producción que explora nuevos territorios sonoros. Nova representa el brillo de lo que viene, un sonido que marca un antes y un después.</p>
+                <div class="relbtns">
+                    <a href="https://youtu.be/Fj2p1FzhZUc" target="_blank" rel="noopener" class="bsg"><i class="fab fa-youtube"></i> Ver Video</a>
+                    <a href="https://open.spotify.com/intl-es/artist/6zmtB63cGtZggwz6l878BL" target="_blank" rel="noopener" class="bso"><i class="fab fa-spotify"></i> Escuchar</a>
+                </div>
+            </div>
+            <a href="https://youtu.be/Fj2p1FzhZUc" target="_blank" rel="noopener" class="relright">
+                <img class="relthumb relzoom"
+                     src="https://i.ytimg.com/vi/Fj2p1FzhZUc/maxresdefault.jpg"
+                     alt="Nova – PowerPeace"
+                     onerror="this.src='https://i.ytimg.com/vi/Fj2p1FzhZUc/hqdefault.jpg'">
+                <div class="reloverlay">
+                    <div class="relplay"><i class="fas fa-play"></i></div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Release 3: Mientras Yo Gano -->
+        <div class="relcard rv d4">
+            <div class="relleft">
+                <div class="tag reltag"><div class="tagdot"></div> Disponible ahora</div>
+                <h3 class="reltitle">"MIENTRAS<br>YO GANO"</h3>
+                <p class="reldesc">Fusión de elementos urbanos con sonidos electrónicos innovadores. Una declaración de crecimiento personal y éxito continuo en el camino musical.</p>
+                <div class="relbtns">
+                    <a href="https://youtu.be/VjdFM17OoGM" target="_blank" rel="noopener" class="bsg"><i class="fab fa-youtube"></i> Ver Video</a>
+                    <a href="https://open.spotify.com/intl-es/artist/6zmtB63cGtZggwz6l878BL" target="_blank" rel="noopener" class="bso"><i class="fab fa-spotify"></i> Escuchar</a>
+                </div>
+            </div>
+            <a href="https://youtu.be/VjdFM17OoGM" target="_blank" rel="noopener" class="relright">
+                <img class="relthumb"
+                     src="https://i.ytimg.com/vi/VjdFM17OoGM/maxresdefault.jpg"
+                     alt="MIENTRAS YO GANO – PowerPeace"
+                     onerror="this.src='https://i.ytimg.com/vi/VjdFM17OoGM/hqdefault.jpg'">
+                <div class="reloverlay">
+                    <div class="relplay"><i class="fas fa-play"></i></div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Release 4: Eclipse Prism -->
+        <div class="relcard rv d4">
+            <div class="relleft">
+                <div class="tag reltag"><div class="tagdot"></div> Single</div>
+                <h3 class="reltitle">"ECLIPSE<br>PRISM"</h3>
+                <p class="reldesc">Una producción envolvente que fusiona atmosferas cinematográficas con beats contundentes. Un viaje sonoro que atrapa desde el primer segundo.</p>
+                <div class="relbtns">
+                    <a href="https://youtu.be/-8k3exCMzOs" target="_blank" rel="noopener" class="bsg"><i class="fab fa-youtube"></i> Ver Video</a>
+                    <a href="https://open.spotify.com/intl-es/artist/6zmtB63cGtZggwz6l878BL" target="_blank" rel="noopener" class="bso"><i class="fab fa-spotify"></i> Escuchar</a>
+                </div>
+            </div>
+            <a href="https://youtu.be/-8k3exCMzOs" target="_blank" rel="noopener" class="relright">
+                <img class="relthumb"
+                     src="https://i.ytimg.com/vi/-8k3exCMzOs/maxresdefault.jpg"
+                     alt="Eclipse Prism – PowerPeace"
+                     onerror="this.src='https://i.ytimg.com/vi/-8k3exCMzOs/hqdefault.jpg'">
+                <div class="reloverlay">
+                    <div class="relplay"><i class="fas fa-play"></i></div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Release 5: Noetic -->
+        <div class="relcard rv d4">
+            <div class="relleft">
+                <div class="tag reltag"><div class="tagdot"></div> Single</div>
+                <h3 class="reltitle">"NOETIC"</h3>
+                <p class="reldesc">Un viaje introspectivo donde el sonido se convierte en pensamiento puro. Producción que desafía los límites entre lo consciente y lo abstracto.</p>
+                <div class="relbtns">
+                    <a href="https://youtu.be/bBQ2B6f_abI" target="_blank" rel="noopener" class="bsg"><i class="fab fa-youtube"></i> Ver Video</a>
+                    <a href="https://open.spotify.com/intl-es/artist/6zmtB63cGtZggwz6l878BL" target="_blank" rel="noopener" class="bso"><i class="fab fa-spotify"></i> Escuchar</a>
+                </div>
+            </div>
+            <a href="https://youtu.be/bBQ2B6f_abI" target="_blank" rel="noopener" class="relright">
+                <img class="relthumb relzoom"
+                     src="https://i.ytimg.com/vi/bBQ2B6f_abI/maxresdefault.jpg"
+                     alt="Noetic – PowerPeace"
+                     onerror="this.src='https://i.ytimg.com/vi/bBQ2B6f_abI/hqdefault.jpg'">
+                <div class="reloverlay">
+                    <div class="relplay"><i class="fas fa-play"></i></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════ CATALOG -->
+<section class="catsec" id="catalog">
+    <div class="wrap">
+        <div class="tag rv"><div class="tagdot"></div> Discografía</div>
+        <h2 class="D rv d1">EXPERIENCIA <span class="Ganim">MUSICAL</span></h2>
+        <div class="catgrid">
+            <div class="catcard rv d2">
+                <div class="catico"><i class="fas fa-fire"></i></div>
+                <div>
+                    <div class="cattitle">Catálogo Completo</div>
+                    <div class="catsub">23 canciones publicadas</div>
+                </div>
+                <p class="catdesc">Explora mi discografía que abarca diferentes géneros y estilos. Desde las primeras producciones hasta los lanzamientos más recientes — cada canción es parte del journey artístico.</p>
+                <div class="catbtns">
+                    <a href="https://open.spotify.com/intl-es/artist/6zmtB63cGtZggwz6l878BL" target="_blank" rel="noopener" class="bsg"><i class="fab fa-spotify"></i> Ver en Spotify</a>
+                    <a href="#music" class="bso"><i class="fas fa-music"></i> Todas las Plataformas</a>
+                </div>
+            </div>
+            <div class="catcard rv d3">
+                <div class="catico"><i class="fas fa-headphones-alt"></i></div>
+                <div>
+                    <div class="cattitle">Próximos Lanzamientos</div>
+                    <div class="catsub">En producción ahora</div>
+                </div>
+                <p class="catdesc">Siempre en el estudio creando. Suscríbete o sígueme en redes para ser el primero en escuchar las próximas producciones antes de que salgan al mundo.</p>
+                <div class="catbtns">
+                    <a href="#newsletter" class="bsg"><i class="fas fa-bell"></i> Recibir Avisos</a>
+                    <a href="https://www.instagram.com/powerpeacee/" target="_blank" rel="noopener" class="bso"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="sdiv"></div>
+
+<!-- ════════════════════════════════ NEWSLETTER -->
+<section class="nlsec" id="newsletter">
+    <div class="wrap">
+        <div class="nlcard rv">
+            <div class="tag reltag"><div class="tagdot"></div> Comunidad exclusiva</div>
+            <h3>ÚNETE A LA <span class="G">COMUNIDAD</span></h3>
+            <p>Contenido exclusivo, avisos de nuevos lanzamientos antes que nadie y acceso a material inédito. Solo para los seguidores más leales.</p>
+            <form class="nlform" id="nlf">
+                <input type="email" class="nlinput" placeholder="tu@email.com" required>
+                <button type="submit" class="bp nlbtn"><i class="fas fa-paper-plane"></i> Suscribirme</button>
+            </form>
+            <div class="nlnote"><i class="fas fa-lock"></i> Sin spam. Solo música que vale la pena.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Wave -->
+<div class="fwave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#07070F"/>
+    </svg>
+</div>
+
+<!-- ════════════════════════════════ FOOTER -->
+<footer>
+    <div class="wrap">
+        <div class="fgrid">
+            <div class="fbrand">
+                <span class="flogo">POWERPEACE</span>
+                <p>Música original creada por Matías Taibo. Cada canción es una pieza de un journey artístico en constante evolución.</p>
+                <div class="fsoc">
+                    <a href="https://www.instagram.com/powerpeacee/" target="_blank" rel="noopener" class="socbtn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@matias.taiboo" target="_blank" rel="noopener" class="socbtn" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://youtube.com/channel/UCj2EzCODcnx5hqrqNVH6tAg" target="_blank" rel="noopener" class="socbtn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://open.spotify.com/intl-es/artist/6zmtB63cGtZggwz6l878BL" target="_blank" rel="noopener" class="socbtn" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+            <div class="fcol">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="mailto:contacto@powerpeace.com">contacto@powerpeace.com</a></li>
+                    <li><a href="#">Booking &amp; Shows</a></li>
+                    <li><a href="#">Colaboraciones</a></li>
+                    <li><a href="#">Producción Musical</a></li>
+                    <li><a href="#">Derechos de Autor</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="fbot">
+            <p>&copy; <span id="yr"></span> POWERPEACE · Matías Taibo · Todos los derechos reservados</p>
+            <p>Hecho con <i class="fas fa-heart c-heart"></i> para mis oyentes</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating Player -->
+<button class="fplay" id="fp">
+    <div class="vizwrap">
+        <div class="vizbar"></div>
+        <div class="vizbar"></div>
+        <div class="vizbar"></div>
+        <div class="vizbar"></div>
+        <div class="vizbar"></div>
+    </div>
+    ESCUCHAR AHORA
+</button>
+
+<!-- Back to Top -->
+<button id="btt" aria-label="Volver arriba"><i class="fas fa-chevron-up"></i></button>
+
+</div><!-- /.page-content -->
+
+<script>
+/* ── LOADER ── */
+window.addEventListener('load',()=>{
+    setTimeout(()=>document.getElementById('ldr').classList.add('out'),1300);
+    setTimeout(showNotif,2400);
+    document.getElementById('yr').textContent=new Date().getFullYear();
+});
+
+/* ── PARTICLES NETWORK ── */
+(function(){
+    const c=document.getElementById('particles'),ctx=c.getContext('2d');
+    let w,h,pts=[];
+    let mx=-500,my=-500; // Mouse coords for interaction
+    
+    function resize(){w=c.width=c.parentElement.offsetWidth;h=c.height=c.parentElement.offsetHeight;}
+    resize(); window.addEventListener('resize',resize);
+    
+    // Track mouse specifically for particles
+    document.addEventListener('mousemove',e=>{
+        const r=c.getBoundingClientRect();
+        mx=e.clientX-r.left;my=e.clientY-r.top;
+    });
+
+    for(let i=0;i<65;i++) pts.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.5+.5,dx:(Math.random()-.5)*.4,dy:(Math.random()-.5)*.4,a:Math.random()*.5+.1});
+    
+    function draw(){
+        ctx.clearRect(0,0,w,h);
+        
+        pts.forEach(p=>{
+            p.x+=p.dx;p.y+=p.dy;
+            if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;
+            
+            // Mouse Interaction: Connect if close
+            const dmx=p.x-mx,dmy=p.y-my,dm=Math.sqrt(dmx*dmx+dmy*dmy);
+            
+            ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+            ctx.fillStyle=`rgba(255,255,255,${p.a})`;
+            ctx.fill();
+            
+            // Connect to mouse
+            if(dm<180){
+                 ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(mx,my);
+                 ctx.strokeStyle=`rgba(255,255,255,${.15*(1-dm/180)})`;ctx.stroke();
+            }
+        });
+        
+        // Connect points to points
+        for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+            const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
+            if(d<110){
+                ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);
+                ctx.strokeStyle=`rgba(255,255,255,${.05*(1-d/110)})`;
+                ctx.stroke();
+            }
+        }
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+
+/* ── CURSOR ── */
+const D=document.getElementById('cdot'),R=document.getElementById('cring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;D.style.left=mx+'px';D.style.top=my+'px';});
+(function loop(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;R.style.left=rx+'px';R.style.top=ry+'px';requestAnimationFrame(loop);})();
+document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{R.style.width='54px';R.style.height='54px';});
+    el.addEventListener('mouseleave',()=>{R.style.width='36px';R.style.height='36px';});
+});
+
+/* ── MOUSE GLOW ── */
+const M=document.getElementById('mglow');
+document.addEventListener('mousemove',e=>{M.style.left=e.clientX+'px';M.style.top=e.clientY+'px';});
+
+/* ── SCROLL + ACTIVE NAV + BTT ── */
+const nav=document.getElementById('nav');
+const btt=document.getElementById('btt');
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nlinks a');
+window.addEventListener('scroll',()=>{
+    nav.classList.toggle('sc',window.scrollY>50);
+    const s=document.documentElement,pct=(s.scrollTop/(s.scrollHeight-s.clientHeight))*100;
+    document.getElementById('prog').style.width=pct+'%';
+    // Back to top
+    btt.classList.toggle('show',window.scrollY>500);
+    // Active nav
+    let current='';
+    sections.forEach(sec=>{
+        const top=sec.offsetTop-150;
+        if(window.scrollY>=top) current=sec.getAttribute('id');
+    });
+    navLinks.forEach(a=>{
+        a.classList.remove('active');
+        if(a.getAttribute('href')==='#'+current) a.classList.add('active');
+    });
+});
+btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ── MOBILE MENU ── */
+const ham=document.getElementById('ham'),mob=document.getElementById('mob'),mobx=document.getElementById('mobx');
+ham.addEventListener('click',()=>{mob.classList.add('open');document.body.style.overflow='hidden';});
+mobx.addEventListener('click',()=>{mob.classList.remove('open');document.body.style.overflow='';});
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mob.classList.remove('open');document.body.style.overflow='';}));
+
+/* ── SMOOTH SCROLL ── */
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+}));
+
+/* ── COUNTER ── */
+function count(el,target){
+    let c=0;const s=target/70;
+    const id=setInterval(()=>{
+        c+=s;
+        if(c>=target){el.textContent=target.toLocaleString('es-AR');clearInterval(id);}
+        else el.textContent=Math.floor(c).toLocaleString('es-AR');
+    },20);
+}
+
+/* ── INTERSECTION OBSERVER ── */
+const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting){
+            e.target.classList.add('on');
+            e.target.querySelectorAll('[data-t]').forEach(v=>count(v,+v.dataset.t));
+            io.unobserve(e.target);
+        }
+    });
+},{threshold:.1});
+document.querySelectorAll('.rv,.sgrid').forEach(el=>io.observe(el));
+
+/* ── NOTIFICATION ── */
+function showNotif(){
+    const n=document.getElementById('notif');
+    n.classList.add('show');
+    setTimeout(()=>n.classList.remove('show'),5000);
+}
+
+/* ── FLOAT PLAYER ── */
+document.getElementById('fp').addEventListener('click',()=>window.open('https://open.spotify.com/intl-es/artist/6zmtB63cGtZggwz6l878BL','_blank'));
+
+/* ── NEWSLETTER ── */
+document.getElementById('nlf').addEventListener('submit',e=>{
+    e.preventDefault();
+    const btn=e.target.querySelector('button');
+    const orig=btn.innerHTML;
+    btn.innerHTML='<i class="fas fa-check"></i> ¡Suscrito!';
+    btn.style.background='linear-gradient(135deg,#00C88A,#009966)';
+    e.target.reset();
+    setTimeout(()=>{btn.innerHTML=orig;btn.style.background='';},4000);
+});
+
+/* ── TILT EFFECT ON CARDS ── */
+document.querySelectorAll('.catcard').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+        const r=card.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width-.5;
+        const y=(e.clientY-r.top)/r.height-.5;
+        card.style.transform=`perspective(800px) rotateY(${x*6}deg) rotateX(${-y*6}deg) translateY(-6px)`;
+    });
+    card.addEventListener('mouseleave',()=>{
+        card.style.transform='';
+    });
+});
+
+/* ── TYPEWRITER ── */
+(function(){
+    const phrases=['Artista independiente 🎤','Productor musical 🎹','+23 canciones publicadas 🎵','Desde Argentina al mundo 🌎','Evolución constante 🚀'];
+    const tw=document.getElementById('tw');
+    let pi=0,ci=0,del=false;
+    function type(){
+        const p=phrases[pi];
+        if(!del){
+            tw.textContent=p.slice(0,ci+1);
+            ci++;
+            if(ci===p.length){del=true;setTimeout(type,2000);return;}
+            setTimeout(type,70);
+        }else{
+            tw.textContent=p.slice(0,ci-1);
+            ci--;
+            if(ci===0){del=false;pi=(pi+1)%phrases.length;setTimeout(type,500);return;}
+            setTimeout(type,35);
+        }
+    }
+    setTimeout(type,2000);
+})();
+
+/* ── PARALLAX ON SCROLL ── */
+(function(){
+    const els=document.querySelectorAll('.D');
+    window.addEventListener('scroll',()=>{
+        const sy=window.scrollY;
+        els.forEach(el=>{
+            const rect=el.getBoundingClientRect();
+            if(rect.top<window.innerHeight&&rect.bottom>0){
+                const offset=(rect.top-window.innerHeight/2)*0.04;
+                el.style.transform=`translateY(${offset}px)`;
+            }
+        });
+    },{passive:true});
+})();
+/* ── TAB BLUR PROTECTION ── */
+document.addEventListener('visibilitychange',()=>{
+    const pgc=document.getElementById('pgc');
+    if(document.hidden){
+        pgc.classList.add('page-blurred');
+    }else{
+        pgc.classList.remove('page-blurred');
+    }
+});
+
+/* ── MAGNETIC BUTTONS ── */
+document.querySelectorAll('.bp,.bsg,.bnav').forEach(btn=>{
+    btn.addEventListener('mousemove',e=>{
+        const r=btn.getBoundingClientRect();
+        const x=e.clientX-r.left-r.width/2;
+        const y=e.clientY-r.top-r.height/2;
+        btn.style.transform=`translate(${x*.2}px,${y*.2}px)`;
+    });
+    btn.addEventListener('mouseleave',()=>{
+        btn.style.transform='';
+    });
+});
+
+/* ── SECURITY PROTECTIONS ── */
+(function(){
+    // Disable right-click context menu
+    document.addEventListener('contextmenu',e=>e.preventDefault());
+
+    // Disable keyboard shortcuts
+    document.addEventListener('keydown',e=>{
+        // F12 - DevTools
+        if(e.key==='F12'){e.preventDefault();return false;}
+        // Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+Shift+C - DevTools
+        if(e.ctrlKey&&e.shiftKey&&['I','i','J','j','C','c'].includes(e.key)){e.preventDefault();return false;}
+        // Ctrl+U - View Source
+        if(e.ctrlKey&&(e.key==='u'||e.key==='U')){e.preventDefault();return false;}
+        // Ctrl+S - Save Page
+        if(e.ctrlKey&&(e.key==='s'||e.key==='S')){e.preventDefault();return false;}
+        // Ctrl+C - Copy
+        if(e.ctrlKey&&(e.key==='c'||e.key==='C')&&!e.shiftKey){e.preventDefault();return false;}
+        // Ctrl+A - Select All
+        if(e.ctrlKey&&(e.key==='a'||e.key==='A')){e.preventDefault();return false;}
+        // Ctrl+P - Print
+        if(e.ctrlKey&&(e.key==='p'||e.key==='P')){e.preventDefault();return false;}
+    });
+
+    // Disable copy, cut, paste
+    ['copy','cut','paste'].forEach(evt=>{
+        document.addEventListener(evt,e=>e.preventDefault());
+    });
+
+    // Disable drag
+    document.addEventListener('dragstart',e=>e.preventDefault());
+    document.addEventListener('drop',e=>e.preventDefault());
+
+    // Disable text selection via JS backup
+    document.addEventListener('selectstart',e=>e.preventDefault());
+
+    // Console warning
+    console.log('%c⛔ STOP!','font-size:48px;font-weight:bold;color:#E8002D;');
+    console.log('%cEsta es una función del navegador destinada a desarrolladores.\nSi alguien te dijo que copiaras/pegaras algo aquí, es una estafa.','font-size:16px;color:#fff;background:#1a1a2e;padding:12px;border-radius:8px;');
+    console.log('%c© POWERPEACE - Matías Taibo. Todos los derechos reservados.','font-size:12px;color:#8888AA;');
+
+    // Anti-iframe protection
+    if(window.top!==window.self){window.top.location=window.self.location;}
+
+    // Disable view-source via address bar
+    if(window.location.protocol==='view-source:'){window.location.href=window.location.href.replace('view-source:','');}
+
+    // Disable drag on all elements
+    document.querySelectorAll('img,a').forEach(el=>el.setAttribute('draggable','false'));
+
+    // Periodic console clear (hinders console inspection)
+    setInterval(()=>{console.clear();console.log('%c⛔ Contenido Protegido © POWERPEACE','font-size:14px;color:#E8002D;font-weight:bold;');},3000);
+
+    // DevTools detection (debugger trap)
+    (function detect(){
+        const d=new Date();
+        debugger;
+        if(new Date()-d>100){
+            document.body.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#04040A;color:#E8002D;font-family:sans-serif;font-size:2rem;text-align:center;padding:2rem">⛔ Acceso no autorizado<br><small style="color:#8888AA;font-size:1rem;margin-top:1rem">© POWERPEACE</small></div>';
+        }
+        setTimeout(detect,1000);
+    })();
+})();
+</script>
+</body>
+</html>
